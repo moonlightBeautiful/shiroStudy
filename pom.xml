@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ims.shiro</groupId>
+    <artifactId>shiroStudy</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>c01hello</module>
+        <module>c02authenticateSubject</module>
+    </modules>
+
+    <properties>
+
+    </properties>
+    <dependencies>
+        <!--shiro包：1.shiro-core核心jar包  -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <!--shiro-core核心jar包依赖于slf4j-api，slf4j-api只是接口，需要实现  -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <!--shiro-jdbcRealm需要的jar包 数据池引入了c3p0和druid，用哪个都可以 -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.37</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!--  <dependency>
+              <groupId>org.apache.shiro</groupId>
+              <artifactId>shiro-web</artifactId>
+              <version>${shiro-web.version}</version>
+          </dependency>
+          &lt;!&ndash; 日志相关：commons-logging和slf4j都是日志的接口，供用户使用，而没有提供实现！shiro需要 &ndash;&gt;
+
+          &lt;!&ndash; 添加jstl支持 &ndash;&gt;
+          <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>jstl</artifactId>
+              <version>${jstl.version}</version>
+          </dependency>
+
+
+          -->
+    </dependencies>
+
+</project>
