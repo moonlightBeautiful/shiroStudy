@@ -21,7 +21,7 @@
                 数据库名字随便取，用户表名默认为users，字段默认为userName，password。
             数据库连接池负责分配、管理和释放数据库连接：
                 C3P0是一个开源的JDBC连接池   
-    2.身份认证      
+    2.认证：主要是身份认证      
         1.Subject:认证主体，Shiro 中最重要的概念
             任何与系统交互的“东西”都是Subject，是指应用程序用户的特定安全的“视图”。
             一个 Shiro Subject 实例代表了一个单一应用程序用户的安全状态和操作。
@@ -29,5 +29,26 @@
                  Principals：身份，可以是用户名，邮件，手机号码等等，用来标识一个登录主体身份。
                  Credentials：凭证，常见有密码，数字证书等等。
         2.认证流程：看图        
-    3.权限认证和授权
-      
+    3.授权：
+        1.权限认证核心要素
+            简介：
+                也就是访问控制，即在应用中控制谁能访问哪些资源。
+            核心三要素：
+                权限、角色和用户、资源。
+            权限：操作资源的权利，比如访问某个页面，以及对某个模块的资源的增删改查。
+            角色：权限的集合，一个角色可以包含多种权限。
+            用户：在shiro中，代表访问系统的用户，即subject。
+        2.授权
+            1.编程式授权：在代码中判断是否有角色或者权限
+                1.基于角色的访问控制
+                2.基于权限的访问控制
+            2.注解式授权：需要java5+
+                1.@RequiresAuthentication
+                2.@RequiresGuest
+                3.@RequiresPermissions("account:create")
+                4.@RequiresRoles("administrator")
+                5.@RequiresUser
+            3.jsp标签授权：
+        3.授权流程图
+            授权：subject.isP../hasR，通俗的讲，就是在securityManager中调用authorizer从realm查看用户有哪些角色和权限。
+           

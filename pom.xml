@@ -10,7 +10,8 @@
 
     <modules>
         <module>c01hello</module>
-        <module>c02authenticateSubject</module>
+        <module>c02authentication</module>
+        <module>c03authorization</module>
     </modules>
 
     <properties>

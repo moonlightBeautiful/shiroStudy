@@ -7,8 +7,10 @@
         Subject 认证主体包含两个信息：
              Principals：身份，可以是用户名，邮件，手机号码等等，用来标识一个登录主体身份。
              Credentials：凭证，常见有密码，数字证书等等。
-    2.认证流程：看图 
-    3.使用jdbcRealm
+    2.认证流程：看图 subject.login
+         通俗的讲，就是在securityManager中调用autheticator从realm查找此用户。
+    3.jdbcRealm
+        jdbcRealm设置数据源2种方式 
         1.在shiro.ini中配置安全数据[main]
             只能在Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:c3p0_realm.ini")中使用
             不可以IniRealm iniRealm = new IniRealm("classpath:shiro.ini");后动态绑定securityManager.setRealm(realm);

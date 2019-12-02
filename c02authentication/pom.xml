@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>c02authenticateSubject</artifactId>
+    <artifactId>c02authentication</artifactId>
 
     <name>c02authenticateSubject</name>
     <!-- FIXME change it to the project's website -->
