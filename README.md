@@ -51,4 +51,7 @@
             3.jsp标签授权：
         3.授权流程图
             授权：subject.isP../hasR，通俗的讲，就是在securityManager中调用authorizer从realm查看用户有哪些角色和权限。
+    4.集成web
+        1.web.xml 2种方式
+        2.
            
