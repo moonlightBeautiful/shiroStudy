@@ -52,6 +52,6 @@
         3.授权流程图
             授权：subject.isP../hasR，通俗的讲，就是在securityManager中调用authorizer从realm查看用户有哪些角色和权限。
     4.集成web
-        1.web.xml 2种方式
+        1.web.xml 1.2之前和之后，配置不一样，以后用1.2以后的版本
         2.
            

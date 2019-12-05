@@ -12,6 +12,7 @@
         <module>c01hello</module>
         <module>c02authentication</module>
         <module>c03authorization</module>
+        <module>c04inWeb</module>
     </modules>
 
     <properties>
