@@ -30,12 +30,30 @@
             <artifactId>shiro-web</artifactId>
             <version>1.2.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+        </dependency>
         <!--shiro-core核心jar包依赖于slf4j-api，slf4j-api只是接口，需要实现  -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.12</version>
         </dependency>
+
+        <!-- 添加日志支持 -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <!--shiro-jdbcRealm需要的jar包 数据池引入了c3p0和druid，用哪个都可以 -->
         <dependency>
             <groupId>c3p0</groupId>
@@ -49,11 +67,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.37</version>
@@ -64,14 +77,6 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

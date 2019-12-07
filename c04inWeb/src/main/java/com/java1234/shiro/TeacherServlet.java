@@ -12,15 +12,14 @@ import java.io.IOException;
  * @date 2019-05-06 17:07
  * @description ... 类
  */
-@WebServlet(name = "AdminiServlet")
-public class AdminServlet extends HttpServlet {
+public class TeacherServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("admin do get");
+        System.out.println("teacher doPost");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("admin do post");
+        System.out.println("teacher doGet");
     }
 }

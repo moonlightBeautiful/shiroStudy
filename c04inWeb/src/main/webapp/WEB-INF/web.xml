@@ -19,23 +19,21 @@
     <filter>
         <filter-name>ShiroFilter</filter-name>
         <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
-        <!-- 默认配置文件就是这个路径，可以不配置 -->
-        <init-param>
-            <param-name>configPath</param-name>
-            <param-value>/WEB-INF/anotherFile.ini</param-value>
-        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>ShiroFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+    <!-- shiro默认配置文件路径和文件名：classpath:shiro.ini或者/WEB-INF/shiro.ini，可以改写 -->
+    <context-param>
+        <param-name>shiroConfigLocations</param-name>
+        <param-value>/WEB-INF/shiro.ini</param-value>
+    </context-param>
     <!-- 配置映射 -->
-    <!--<servlet>
+    <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.java1234.shiro.LoginServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -45,9 +43,17 @@
         <servlet-name>adminServlet</servlet-name>
         <servlet-class>com.java1234.shiro.AdminServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>adminServlet</servlet-name>
         <url-pattern>/admin</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>teacherServlet</servlet-name>
+        <servlet-class>com.java1234.shiro.TeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>teacherServlet</servlet-name>
+        <url-pattern>/teacher</url-pattern>
+    </servlet-mapping>
 </web-app>
