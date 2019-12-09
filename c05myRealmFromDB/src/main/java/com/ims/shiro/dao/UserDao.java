@@ -1,6 +1,6 @@
-package com.java1234.dao;
+package com.ims.shiro.dao;
 
-import com.java1234.entity.User;
+import com.ims.shiro.entity.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

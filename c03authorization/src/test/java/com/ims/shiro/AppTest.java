@@ -21,7 +21,7 @@ public class AppTest {
 
     @Before
     public void setUp() throws Exception {
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:com.ims.shiro.shiro.ini");
         DefaultSecurityManager securityManager = (DefaultSecurityManager) factory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
     }

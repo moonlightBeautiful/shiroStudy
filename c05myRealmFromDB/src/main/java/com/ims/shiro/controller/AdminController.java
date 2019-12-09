@@ -1,4 +1,4 @@
-package com.java1234.controller;
+package com.ims.shiro.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

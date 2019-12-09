@@ -24,28 +24,28 @@ public class AppTest {
     @Before
     public void setUp() throws Exception {
         //方式1，代码中写数据源配置
-       /*JdbcRealm realm = new JdbcRealm();
+       /*JdbcRealm com.ims.shiro.realm = new JdbcRealm();
         DruidDataSource dataSource = new DruidDataSource();
         {
             dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/db_shiro");
             dataSource.setUsername("root");
             dataSource.setPassword("root");
         }
-        realm.setDataSource(dataSource);*/
-        /*JdbcRealm realm = new JdbcRealm();
+        com.ims.shiro.realm.setDataSource(dataSource);*/
+        /*JdbcRealm com.ims.shiro.realm = new JdbcRealm();
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         {
             dataSource.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/db_shiro");
             dataSource.setUser("root");
             dataSource.setPassword("root");
         }
-        realm.setDataSource(dataSource);*/
+        com.ims.shiro.realm.setDataSource(dataSource);*/
         /*DefaultSecurityManager securityManager = new DefaultSecurityManager();
-        securityManager.setRealm(realm);
+        securityManager.setRealm(com.ims.shiro.realm);
         SecurityUtils.setSecurityManager(securityManager);*/
         /*Factory<SecurityManager> factory = new IniSecurityManagerFactory();
         DefaultSecurityManager securityManager = (DefaultSecurityManager) factory.getInstance();
-        securityManager.setRealm(realm);
+        securityManager.setRealm(com.ims.shiro.realm);
         SecurityUtils.setSecurityManager(securityManager);*/
 
         //方式2，配置文件写数据源配置，只能在获得工厂的时候使用

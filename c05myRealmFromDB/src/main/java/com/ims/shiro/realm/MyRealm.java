@@ -1,8 +1,7 @@
-package com.java1234.realm;
+package com.ims.shiro.realm;
 
-import com.java1234.dao.UserDao;
-import com.java1234.entity.User;
-import com.java1234.util.DbUtil;
+import com.ims.shiro.dao.UserDao;
+import com.ims.shiro.entity.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -11,6 +10,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import com.ims.shiro.util.DbUtil;
 
 import java.sql.Connection;
 
@@ -24,7 +24,7 @@ public class MyRealm extends AuthorizingRealm {
     private DbUtil dbUtil = new DbUtil();
 
     /**
-     * 授权
+     * 授权：shiro会在doGetAuthenticationInfo方法之后直接调用此方法授权
      * 在认证身份通过后，shiro自动调用这个方法给登陆人赋予角色和权限
      *
      * @param principalCollection
@@ -33,11 +33,14 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+
         String userName = (String) principalCollection.getPrimaryPrincipal();
         Connection conn = null;
         try {
             conn = dbUtil.getConn();
+            //Set<String>
             authorizationInfo.setRoles(userDao.getRolesByUserName(conn, userName));
+            //Set<String>
             authorizationInfo.setStringPermissions(userDao.getPermissionsByUserName(conn, userName));
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,7 +56,7 @@ public class MyRealm extends AuthorizingRealm {
     }
 
     /**
-     * 认证
+     * 认证：shiro会在 subject.login(token);时，调用此方法，根据返回authenticationInfo与token对比认证
      * 根据传入的参数token来获取登陆人的用户名，然后查询数据库此登陆人是否存在，存在则把查询到的用户名和密码返回，验证交给shiro
      *
      * @param token
@@ -71,7 +74,6 @@ public class MyRealm extends AuthorizingRealm {
                 authenticationInfo = new SimpleAuthenticationInfo(user.getUserName(),
                         user.getPassword(),
                         "这个内容随便写");
-
             }
         } catch (Exception e) {
             e.printStackTrace();

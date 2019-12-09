@@ -2,14 +2,9 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
-    <display-name>Archetype Created Web Application</display-name>
+    <display-name>c05myRealmFromDB</display-name>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>default.html</welcome-file>
-        <welcome-file>default.htm</welcome-file>
-        <welcome-file>default.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     <!-- 添加shiro监听器 -->
     <listener>
@@ -27,7 +22,7 @@
 
     <servlet>
         <servlet-name>loginController</servlet-name>
-        <servlet-class>com.java1234.controller.LoginController</servlet-class>
+        <servlet-class>com.ims.shiro.controller.LoginController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
@@ -36,7 +31,7 @@
 
     <servlet>
         <servlet-name>adminController</servlet-name>
-        <servlet-class>com.java1234.controller.AdminController</servlet-class>
+        <servlet-class>com.ims.shiro.controller.AdminController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>adminController</servlet-name>

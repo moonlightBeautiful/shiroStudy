@@ -1,4 +1,4 @@
-package com.java1234.util;
+package com.ims.shiro.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

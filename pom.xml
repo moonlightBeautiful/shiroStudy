@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.ims.shiro</groupId>
+    <groupId>com.ims.com.ims.shiro.shiro</groupId>
     <artifactId>shiroStudy</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -13,21 +13,23 @@
         <module>c02authentication</module>
         <module>c03authorization</module>
         <module>c04inWeb</module>
+        <module>c05realmFromDB</module>
+        <module>c05myRealmFromDB</module>
     </modules>
 
     <properties>
 
     </properties>
     <dependencies>
-        <!--shiro包：1.shiro-core核心jar包  -->
+        <!--shiro包：1.com.ims.shiro.shiro-core核心jar包  -->
         <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
+            <groupId>org.apache.com.ims.shiro.shiro</groupId>
+            <artifactId>com.ims.shiro.shiro-core</artifactId>
             <version>1.2.4</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-web</artifactId>
+            <groupId>org.apache.com.ims.shiro.shiro</groupId>
+            <artifactId>com.ims.shiro.shiro-web</artifactId>
             <version>1.2.4</version>
         </dependency>
         <dependency>
@@ -35,7 +37,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.12</version>
         </dependency>
-        <!--shiro-core核心jar包依赖于slf4j-api，slf4j-api只是接口，需要实现  -->
+        <!--com.ims.shiro.shiro-core核心jar包依赖于slf4j-api，slf4j-api只是接口，需要实现  -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -54,7 +56,7 @@
             <version>1.2</version>
         </dependency>
 
-        <!--shiro-jdbcRealm需要的jar包 数据池引入了c3p0和druid，用哪个都可以 -->
+        <!--com.ims.shiro.shiro-jdbcRealm需要的jar包 数据池引入了c3p0和druid，用哪个都可以 -->
         <dependency>
             <groupId>c3p0</groupId>
             <artifactId>c3p0</artifactId>

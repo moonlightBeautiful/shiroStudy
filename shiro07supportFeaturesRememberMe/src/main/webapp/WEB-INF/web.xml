@@ -14,12 +14,12 @@
 
     <!-- 添加shiro支持 -->
     <listener>
-        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+        <listener-class>org.apache.com.ims.shiro.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
 
     <filter>
         <filter-name>ShiroFilter</filter-name>
-        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+        <filter-class>org.apache.com.ims.shiro.shiro.web.servlet.ShiroFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>ShiroFilter</filter-name>
@@ -29,7 +29,7 @@
     <!-- 配置映射 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>com.java1234.controller.LoginServlet</servlet-class>
+        <servlet-class>com.java1234.com.ims.shiro.controller.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -39,7 +39,7 @@
 
     <servlet>
         <servlet-name>adminServlet</servlet-name>
-        <servlet-class>com.java1234.controller.AdminServlet</servlet-class>
+        <servlet-class>com.java1234.com.ims.shiro.controller.AdminServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

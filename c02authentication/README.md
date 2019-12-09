@@ -13,18 +13,18 @@
         jdbcRealm设置数据源2种方式 
         1.在shiro.ini中配置安全数据[main]
             只能在Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:c3p0_realm.ini")中使用
-            不可以IniRealm iniRealm = new IniRealm("classpath:shiro.ini");后动态绑定securityManager.setRealm(realm);
+            不可以IniRealm iniRealm = new IniRealm("classpath:com.ims.shiro.shiro.ini");后动态绑定securityManager.setRealm(com.ims.shiro.realm);
         2.在代码中设置安全数据源，
             可以
-                JdbcRealm realm = new JdbcRealm();
+                JdbcRealm com.ims.shiro.realm = new JdbcRealm();
                 ComboPooledDataSource dataSource = new ComboPooledDataSource();
                 {
                     dataSource.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/db_shiro");
                     dataSource.setUser("root");
                     dataSource.setPassword("root");
                 }
-                realm.setDataSource(dataSource);
-            后，动态绑定securityManager.setRealm(realm);
+                com.ims.shiro.realm.setDataSource(dataSource);
+            后，动态绑定securityManager.setRealm(com.ims.shiro.realm);
             
                        
  

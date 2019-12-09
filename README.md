@@ -9,10 +9,10 @@
                 3.Session Manager（会话管理）：用户登陆后就是一次会话，在没有退出之前,它的所有信息都在会话中。                
                 4.Cryptography（加密）：保护数据的安全性,如密码加密存储到数据库,而不是明文存储。
         2.实战编码
-            1.shiro.ini：realm
+            1.com.ims.shiro.shiro.ini：com.ims.shiro.realm
                 [users]：用户名和密码
             2.helloShiro
-        3.realm：安全数据(如用户、角色、权限)
+        3.com.ims.shiro.realm：安全数据(如用户、角色、权限)
             Shiro从realm获取安全数据(如用户、角色、权限)对Subject进行认证、授权及权限验证、会话管理。
             种类：
                 jdbcRealm、txtRealm、jndiRealm等，以后用jdbcRealm
@@ -56,7 +56,7 @@
             监听器+过滤器
         2.shiro配置简介
             [main]
-            # authc.loginUrl：没有身份的时候，转到的请求
+            # authc.loginUrl：没有身份的时候，转到的请求。如果是servlet，则走get方法
             # roles.unauthorizedUrl：没有角色的时候，转到的请求
             # authc.loginUrl：没有权限的时候，转到的请求
             authc.loginUrl = /index.jsp

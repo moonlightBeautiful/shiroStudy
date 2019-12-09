@@ -21,7 +21,7 @@ public class AppTest {
     @Before
     public void setUp() throws Exception {
         //1.获取realm：在realm的inn文件中获取安全数据源
-       /* IniRealm iniRealm = new IniRealm("classpath:shiro.ini");*/
+       /* IniRealm iniRealm = new IniRealm("classpath:com.ims.shiro.shiro.ini");*/
 
         //2.获取DefaultSecurityManager
         //方式1，直接new DefaultSecurityManager
@@ -36,7 +36,7 @@ public class AppTest {
         SecurityUtils.setSecurityManager(securityManager);*/
 
         //方式3，使用Factory直接读取ini文件
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:com.ims.shiro.shiro.ini");
         DefaultSecurityManager securityManager = (DefaultSecurityManager) factory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
     }
