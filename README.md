@@ -96,5 +96,6 @@
             token.setRememberMe(true)
             subject.isRemembered() 返回是否记住me
             默认cookie时间是一周，
-            
+    7.spring整合shiro
+        mybatis 映射方法 当方法的返回类型是 Set<String>， mapper文件中配置resultType="String"就可以
            
