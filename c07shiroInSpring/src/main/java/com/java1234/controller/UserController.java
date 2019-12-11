@@ -14,7 +14,7 @@ import com.java1234.entity.User;
 
 
 /**
- * 用户Controller层
+ * ???Controller??
  * @author Administrator
  *
  */
@@ -24,7 +24,7 @@ public class UserController {
 
 	
 	/**
-	 * 用户登录
+	 * ??????
 	 * @param user
 	 * @param request
 	 * @return
@@ -39,12 +39,12 @@ public class UserController {
 			System.out.println("sessionId:"+session.getId());
 			System.out.println("sessionHost:"+session.getHost());
 			System.out.println("sessionTimeout:"+session.getTimeout());
-			session.setAttribute("info", "session的数据");
+			session.setAttribute("info", "session??????");
 			return "redirect:/success.jsp";
 		}catch(Exception e){
 			e.printStackTrace();
 			request.setAttribute("user", user);
-			request.setAttribute("errorMsg", "用户名或密码错误！");
+			request.setAttribute("errorMsg", "用户名或者密码错误");
 			return "index";
 		}
 	}
