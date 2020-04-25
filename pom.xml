@@ -10,8 +10,8 @@
 
     <modules>
         <module>c01hello</module>
-        <module>c02authentication</module>
-        <module>c03authorization</module>
+        <module>c02jdbcRealm</module>
+        <module>c03permission</module>
         <module>c04inWeb</module>
         <module>c05myRealmFromDB</module>
         <module>c06features</module>
@@ -22,7 +22,7 @@
 
     </properties>
     <dependencies>
-        <!--shiro包：1.com.ims.shiro.shiro-core核心jar包  -->
+        <!--shiro包：1.shiro-core核心jar包  -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
@@ -38,7 +38,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.12</version>
         </dependency>
-        <!--com.ims.shiro.shiro-core核心jar包依赖于slf4j-api，slf4j-api只是接口，需要实现  -->
+        <!--shiro-core核心jar包依赖于slf4j-api，slf4j-api只是接口，需要实现  -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -57,7 +57,7 @@
             <version>1.2</version>
         </dependency>
 
-        <!--com.ims.shiro.shiro-jdbcRealm需要的jar包 数据池引入了c3p0和druid，用哪个都可以 -->
+        <!--shiro-jdbcRealm需要的jar包 数据池引入了c3p0和druid，用哪个都可以 -->
         <dependency>
             <groupId>c3p0</groupId>
             <artifactId>c3p0</artifactId>
@@ -67,12 +67,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.1.10</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.37</version>
+            <version>8.0.18</version>
         </dependency>
 
         <!-- 添加jtl支持 -->
@@ -115,38 +114,38 @@
             <artifactId>spring-context-support</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
-
+        <!-- 添加mybatis支持 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <!-- mybatis-spring -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
@@ -159,8 +158,6 @@
             <artifactId>shiro-spring</artifactId>
             <version>1.2.4</version>
         </dependency>
-
-
     </dependencies>
 
 </project>
