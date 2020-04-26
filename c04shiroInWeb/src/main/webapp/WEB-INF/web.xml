@@ -14,11 +14,11 @@
 
     <!-- 添加shiro支持  监听器和过滤器 -->
     <listener>
-        <listener-class>org.apache.com.ims.shiro.shiro.web.env.EnvironmentLoaderListener</listener-class>
+        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
     <filter>
         <filter-name>ShiroFilter</filter-name>
-        <filter-class>org.apache.com.ims.shiro.shiro.web.servlet.ShiroFilter</filter-class>
+        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>ShiroFilter</filter-name>
@@ -27,12 +27,13 @@
     <!-- shiro默认配置文件路径和文件名：classpath:com.ims.shiro.shiro.ini或者/WEB-INF/com.ims.shiro.shiro.ini，可以改写 -->
     <context-param>
         <param-name>shiroConfigLocations</param-name>
-        <param-value>/WEB-INF/com.ims.shiro.shiro.ini</param-value>
+        <param-value>/WEB-INF/shiro.ini</param-value>
     </context-param>
+
     <!-- 配置映射 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>com.java1234.com.ims.shiro.shiro.LoginServlet</servlet-class>
+        <servlet-class>com.ims.shiro.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -41,7 +42,7 @@
 
     <servlet>
         <servlet-name>adminServlet</servlet-name>
-        <servlet-class>com.java1234.com.ims.shiro.shiro.AdminServlet</servlet-class>
+        <servlet-class>com.ims.shiro.AdminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>adminServlet</servlet-name>
@@ -50,7 +51,7 @@
 
     <servlet>
         <servlet-name>teacherServlet</servlet-name>
-        <servlet-class>com.java1234.com.ims.shiro.shiro.TeacherServlet</servlet-class>
+        <servlet-class>com.ims.shiro.TeacherServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>teacherServlet</servlet-name>

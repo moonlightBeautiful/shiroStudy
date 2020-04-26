@@ -1,4 +1,4 @@
-package com.java1234.shiro;
+package com.ims.shiro;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,14 +12,14 @@ import java.io.IOException;
  * @date 2019-05-06 17:07
  * @description ... 类
  */
-public class TeacherServlet extends HttpServlet {
+public class AdminServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("teacher doPost");
+        System.out.println("admin doPost");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("teacher doGet");
+        System.out.println("admin doGet");
     }
 }

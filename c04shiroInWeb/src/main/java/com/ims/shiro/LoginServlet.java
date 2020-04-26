@@ -1,4 +1,4 @@
-package com.java1234.shiro;
+package com.ims.shiro;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
         UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
         try {
             subject.login(token);
+            System.out.println("subject获取session对象");
             Session session = subject.getSession();
             System.out.println("sessionId:" + session.getId());
             System.out.println("sessionHost:" + session.getHost());

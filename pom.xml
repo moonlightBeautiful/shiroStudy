@@ -12,7 +12,7 @@
         <module>c01hello</module>
         <module>c02jdbcRealm</module>
         <module>c03permission</module>
-        <module>c04inWeb</module>
+        <module>c04shiroInWeb</module>
         <module>c05myRealmFromDB</module>
         <module>c06features</module>
         <module>c07shiroInSpring</module>

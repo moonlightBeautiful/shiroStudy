@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>权限未认证通过</title>
+    <title>没有对应的角色！</title>
 </head>
 <body>
-权限未认证通过！
+没有对应的角色！
 </body>
 </html>
