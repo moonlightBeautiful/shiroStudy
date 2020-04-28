@@ -21,11 +21,10 @@ import java.sql.Connection;
  */
 public class MyRealm extends AuthorizingRealm {
     private UserDao userDao = new UserDao();
-    private DbUtil dbUtil = new DbUtil();
 
     /**
-     * 授权：shiro会在doGetAuthenticationInfo方法之后直接调用此方法授权
-     * 在认证身份通过后，shiro自动调用这个方法给登陆人赋予角色和权限
+     *  用户授权：
+     *      在认证身份通过后，shiro自动调用这个方法给登陆人赋予角色和权限
      *
      * @param principalCollection
      * @return
@@ -37,7 +36,7 @@ public class MyRealm extends AuthorizingRealm {
         String userName = (String) principalCollection.getPrimaryPrincipal();
         Connection conn = null;
         try {
-            conn = dbUtil.getConn();
+            conn = DbUtil.getConn();
             //Set<String>
             authorizationInfo.setRoles(userDao.getRolesByUserName(conn, userName));
             //Set<String>
@@ -46,7 +45,7 @@ public class MyRealm extends AuthorizingRealm {
             e.printStackTrace();
         } finally {
             try {
-                dbUtil.closeConn(conn);
+                DbUtil.closeConn(conn);
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -56,7 +55,8 @@ public class MyRealm extends AuthorizingRealm {
     }
 
     /**
-     * 认证：shiro会在 subject.login(token);时，调用此方法，根据返回authenticationInfo与token对比认证
+     * 认证当前登陆用户：
+     *      shiro会在 subject.login(token)时，调用此方法，根据返回authenticationInfo与token对比认证
      * 根据传入的参数token来获取登陆人的用户名，然后查询数据库此登陆人是否存在，存在则把查询到的用户名和密码返回，验证交给shiro
      *
      * @param token
@@ -65,21 +65,23 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         AuthenticationInfo authenticationInfo = null;
+        //1.获取当前登陆用户用户名
         String userName = (String) token.getPrincipal();
         Connection conn = null;
         try {
-            conn = dbUtil.getConn();
+            conn = DbUtil.getConn();
+            //2.根据当前登陆用户用户名查询出来用户信息
             User user = userDao.getByUserName(conn, userName);
             if (user != null) {
-                authenticationInfo = new SimpleAuthenticationInfo(user.getUserName(),
-                        user.getPassword(),
+                //3.认证信息封装查询出来用户信息
+                authenticationInfo = new SimpleAuthenticationInfo(user.getUserName(), user.getPassword(),
                         "这个内容随便写");
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                dbUtil.closeConn(conn);
+                DbUtil.closeConn(conn);
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

@@ -14,7 +14,7 @@
         <module>c03permission</module>
         <module>c04shiroInWeb</module>
         <module>c05myRealmFromDB</module>
-        <module>c06features</module>
+        <module>c06supportFeatures</module>
         <module>c07shiroInSpring</module>
     </modules>
 

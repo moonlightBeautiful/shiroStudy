@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>c06features</artifactId>
+    <artifactId>c06supportFeatures</artifactId>
     <packaging>war</packaging>
 
-    <name>c06features Maven Webapp</name>
+    <name>c06supportFeatures</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

@@ -15,9 +15,9 @@ public class DbUtil {
      * @return
      * @throws Exception
      */
-    public Connection getConn() throws Exception {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_shiro", "root", "root");
+    public static Connection getConn() throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_shiro?serverTimezone=UTC", "root", "root");
         return conn;
     }
 
@@ -27,17 +27,16 @@ public class DbUtil {
      * @param conn
      * @throws Exception
      */
-    public void closeConn(Connection conn) throws Exception {
+    public static void closeConn(Connection conn) throws Exception {
         if (conn != null) {
             conn.close();
         }
     }
 
     public static void main(String[] args) {
-        DbUtil dbUtil = new DbUtil();
         Connection conn = null;
         try {
-            conn = dbUtil.getConn();
+            conn = DbUtil.getConn();
             System.out.println("数据库连接成功");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -45,7 +44,7 @@ public class DbUtil {
             System.out.println("数据库连接失败");
         } finally {
             try {
-                dbUtil.closeConn(conn);
+                DbUtil.closeConn(conn);
             } catch (Exception e) {
                 e.printStackTrace();
             }
