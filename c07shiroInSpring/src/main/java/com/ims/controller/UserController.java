@@ -1,4 +1,4 @@
-package com.java1234.controller;
+package com.ims.controller;
 
 
 import org.apache.shiro.SecurityUtils;
@@ -8,7 +8,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.java1234.entity.User;
+import com.ims.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 

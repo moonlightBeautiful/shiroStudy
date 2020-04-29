@@ -17,7 +17,7 @@ import java.util.Set;
  */
 public class UserDao {
 
-    public User getByUserName(Connection conn, String userName) throws Exception {
+    public User getUserByUserName(Connection conn, String userName) throws Exception {
         User resultUser = null;
         String sql = "select * from t_user where userName=?";
         PreparedStatement pstmt = conn.prepareStatement(sql);

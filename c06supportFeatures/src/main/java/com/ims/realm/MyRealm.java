@@ -1,8 +1,8 @@
 package com.ims.realm;
 
-import com.ims.shiro.dao.UserDao;
-import com.ims.shiro.entity.User;
-import com.ims.shiro.util.DbUtil;
+import com.ims.dao.UserDao;
+import com.ims.entity.User;
+import com.ims.util.DbUtil;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

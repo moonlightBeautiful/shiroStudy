@@ -88,7 +88,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 添加Spring支持 -->
+        <!-- 添加Spring支持，用于整合shiro -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -139,6 +139,14 @@
             <artifactId>spring-jdbc</artifactId>
             <version>4.1.7.RELEASE</version>
         </dependency>
+
+        <!-- shiro-spring -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
         <!-- 添加mybatis支持 -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -150,13 +158,6 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.3</version>
-        </dependency>
-
-        <!-- shiro-spring -->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>1.2.4</version>
         </dependency>
     </dependencies>
 

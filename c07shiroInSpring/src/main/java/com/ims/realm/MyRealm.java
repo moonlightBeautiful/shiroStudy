@@ -1,4 +1,4 @@
-package com.java1234.realm;
+package com.ims.realm;
 
 
 import javax.annotation.Resource;
@@ -12,8 +12,8 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
-import com.java1234.entity.User;
-import com.java1234.service.UserService;
+import com.ims.entity.User;
+import com.ims.service.UserService;
 
 public class MyRealm extends AuthorizingRealm {
 
@@ -25,8 +25,8 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String userName = (String) principals.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        authorizationInfo.setRoles(userService.getRoles(userName));
-        authorizationInfo.setStringPermissions(userService.getPermissions(userName));
+        authorizationInfo.setRoles(userService.getRolesByUserName(userName));
+        authorizationInfo.setStringPermissions(userService.getPermissionsByUserName(userName));
         return authorizationInfo;
     }
 
@@ -34,7 +34,7 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String userName = (String) token.getPrincipal();
-        User user = userService.getByUserName(userName);
+        User user = userService.getUserByUserName(userName);
         if (user != null) {
             AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getUserName(), user.getPassword(), "xx");
             return authcInfo;

@@ -1,8 +1,8 @@
-package com.java1234.dao;
+package com.ims.dao;
 
 import java.util.Set;
 
-import com.java1234.entity.User;
+import com.ims.entity.User;
 
 public interface UserDao {
 
@@ -12,7 +12,7 @@ public interface UserDao {
      * @param userName
      * @return
      */
-    public User getByUserName(String userName);
+    public User getUserByUserName(String userName);
 
     /**
      * 通过用户名查询角色信息
@@ -20,7 +20,7 @@ public interface UserDao {
      * @param userName
      * @return
      */
-    public Set<String> getRoles(String userName);
+    public Set<String> getRolesByUserName(String userName);
 
     /**
      * 通过用户名查询权限信息
@@ -28,5 +28,5 @@ public interface UserDao {
      * @param userName
      * @return
      */
-    public Set<String> getPermissions(String userName);
+    public Set<String> getPermissionsByUserName(String userName);
 }

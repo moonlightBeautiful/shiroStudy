@@ -1,4 +1,4 @@
-package com.java1234.entity;
+package com.ims.entity;
 
 public class User {
 

@@ -5,6 +5,6 @@
 <configuration>
     <!-- 别名 -->
     <typeAliases>
-        <package name="com.java1234.entity"/>
+        <package name="com.ims.entity"/>
     </typeAliases>
 </configuration>
